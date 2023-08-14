@@ -5,13 +5,24 @@
  */
 int main(void)
 {
-	int i;
+	int num1, num2;
 
-	for (i = 0 ; i < 10 ; i++)
+	for (num1 = '0'; num1 <= '9'; num1++)
 	{
-		putchar(i + '0');
-		putchar('.');
-		putchar(' ');
+		for (num2 = '0'; num2 <= '9'; num2++)
+		{
+			if (num1 < num2)
+			{
+				putchar(num1);
+				putchar(num2);
+				if (num1 != '8' || (num1 == '8' && num2 != '9'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+		}
 	}
+	putchar('\n');
 	return (0);
 }
