@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * main - checks 1-aphabet.c file.
+ * main - entry point of the program.
  * Return: 0 (success)
  */
 int main(void)
 {
-	print_alphabet();
+	print_alphabet_x10();
 	return (0);
 }
