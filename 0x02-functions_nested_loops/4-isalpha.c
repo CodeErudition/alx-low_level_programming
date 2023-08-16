@@ -6,14 +6,5 @@
  */
 int _isalpha(int c)
 {
-	int alpha = 0;
-	char upper, lower;
-
-	for (lower = 'a'; lower <= 'z'; lower++)
-	{
-		for (upper = 'A'; upper <= 'Z'; upper++)
-			if (lower == c || upper == C)
-				alpha = 1;
-	}
-	return (alpha);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
