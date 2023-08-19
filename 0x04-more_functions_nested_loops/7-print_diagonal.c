@@ -1,9 +1,10 @@
-#iaa34a3d6efed11e8e813aa34a3d6efed11e8e813nclude "main.h"
+#include "main.h"
 
 /**
  * print_diagonal - Prints a diagonal line of backslashes.
- * @n: The number of lines in the diagonal
- *  Return: void.
+ * @n: The number of lines in the diagonal.
+ *
+ * Return: void.
  */
 void print_diagonal(int n)
 {
