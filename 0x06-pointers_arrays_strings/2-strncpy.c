@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strncat - a function that copies a string,
+ * _strncpy - a function that copies a string,
  * using at most n bytes from src
  * @dest: input value
  * @src: input value
