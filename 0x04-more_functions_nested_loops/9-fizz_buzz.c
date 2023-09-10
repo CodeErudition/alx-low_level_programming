@@ -14,7 +14,7 @@ int main(void)
 {
 	int nth;
 
-	for (nth = 1; nth < 100; nth++)
+	for (nth = 1; nth <= 100; nth++)
 	{
 		if (nth % 3 == 0 && nth % 5 == 0)
 		{
@@ -33,7 +33,7 @@ int main(void)
 			printf("%d", nth);
 		}
 		if (nth != 100)
-			printf(", ");
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
