@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_diagonal - Prints a diagonal line
+ * print_square - Prints a diagonal line
  * @size: number of times.
  * Return: void.
  */
@@ -10,11 +10,15 @@ void print_square(int size)
 
 	if (size <= 0)
 	{
-		for (i = 0; i < size; i++)
+		_putchar('\n');
+		return;
+	}
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
 		{
-			for (j = 0; j < size; j++);
 			_putchar('#');
-			_putchar('\n');
 		}
+		_putchar('\n');
 	}
 }
