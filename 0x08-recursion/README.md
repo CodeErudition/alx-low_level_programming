@@ -3,7 +3,7 @@
 ## Below are projects related to recursion.
 
 # Task 0
-## Pseudo Code to Task 0 (0-prinft.c).
+## Pseudo Code to Task 0 (_puts_recursion.c).
 
 ```c
 function void _puts_recursion(char *s):
