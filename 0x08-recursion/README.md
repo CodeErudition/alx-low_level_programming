@@ -83,3 +83,32 @@ Function int _pow_recursion(int x, int y):
         Return (x * _pow_recursion(x, y - 1);
 End program
 ```
+# Task 5
+## Pseudo Code to Task 5 (5-sqrt_recursion.c).
+```c
+Start program
+Function int dummy_sqrt(int num, int trial):
+	Set base conditions:
+	If (trial * trial ==  num) Then
+        Return (trial);
+	End If
+
+	If (trial == num / 2) Then
+        Return (-1);
+	End If
+	
+	Continue the search with the next trial value
+	Return (dummy_sqrt(num, trial + 1));
+End program
+
+Start program
+Function int _sqrt_recursion(int n):
+	Set base condition:
+	If (n < 0) Then
+	Return (-1);
+	End If
+	
+	Call the recursive function dummy_sqrt to search for the square root
+	Return (dummy_sqrt(n, 1));
+End program
+```
