@@ -53,3 +53,33 @@ Function int _strlen_recursion(char *s):
                 Return (slen);
 End program
 ```
+# Task 3
+## Pseudo Code to Task 3 (3-factorial.c).
+
+```c
+Start program
+Function int factorial(int n):
+	Set base condition:
+        if n < 0:
+                return (-1);
+	if n <= 1
+		return (1);
+	Make a recursive function call:
+        Return (n * factorial(n-1));
+End program
+```
+# Task 4
+## Pseudo Code to Task 4 (4-pow_recursion.c).
+
+```c
+Start program
+Function int _pow_recursion(int x, int y):
+        Set base condition:
+        if n < 0:
+                return (-1);
+        if n == 0
+                return (1);
+	Make a recursive function call:
+        Return (x * _pow_recursion(x, y - 1);
+End program
+```
