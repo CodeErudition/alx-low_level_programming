@@ -8,16 +8,17 @@
 ```c
 Start program
 Function void _puts_recursion(char *s):
-	Set base condition:
+	// Set base condition:
 
 	If (*s is == null terminator '\0'):
-		Print new line
+		//Print new line with a custom putchar function:
+		_putchar('\n');
 	End If 
 
 	Else 
-		Print the first character of the string:
+		// Print the first character of the string:
 		_putchar(*s);
-		Make a recursive call:
+		// Make a recursive call:
 		_puts_recursion(s + 1);
 	End Else
 
@@ -30,16 +31,16 @@ End program
 Start program
 Function void _print_rev_recursion(char *s):
 
-	Set base condition:
+	// Set base condition:
 
 	If (*s is == null terminator '\0'):
 		Return;
 	End If
 
 	Else
-		Make a recursive call:
+		// Make a recursive call:
 		_print_rev_recursion(s + 1);
-		Print the current character pointed to by s:
+		// Print the current character pointed to by s:
 		_putchar(*s);
 	End Else
 
@@ -52,18 +53,20 @@ End program
 Start program
 Function int _strlen_recursion(char *s):
 
-	Declear a variable slen to keep track of the string length.
-        Set base condition:
+	// Declear a variable slen to keep track of the string length.
+	int slen;
+
+        // Set base condition:
 
         If (*s is == null terminator '\0'):
                 Return (0);
 	End If
 
         Else
-		Assign a recursive call to the variable slen to calculate 
-		the length of the rest string:
+	/* Assign a recursive call to the variable slen to calculate 
+	the length of the rest string: */
 		slen = _strlen_recursion(s + 1);
-		Increment slen by one:
+		// Increment slen by one:
 		slen++;
                 Return (slen);
 	End Else
@@ -77,7 +80,7 @@ End program
 Start program
 Function int factorial(int n):
 
-	Set base condition:
+	// Set base condition:
 
         If (n < 0):
                 Return (-1);
@@ -87,7 +90,7 @@ Function int factorial(int n):
 		Return (1);
 	End If
 
-	Make a recursive function call:
+	// Make a recursive function call:
         Return (n * factorial(n-1));
 
 End program
@@ -99,7 +102,7 @@ End program
 Start program
 Function int _pow_recursion(int x, int y):
 
-        Set base condition:
+        // Set base condition:
 
         If (n < 0):
                 Return (-1);
@@ -109,7 +112,7 @@ Function int _pow_recursion(int x, int y):
                 Return (1);
 	End If
 
-	Make a recursive function call:
+	// Make a recursive function call:
         Return (x * _pow_recursion(x, y - 1);
 
 End program
@@ -120,7 +123,7 @@ End program
 Start program
 Function(helper) int dummy_sqrt(int num, int trial):
 
-	Set base conditions:
+	// Set base conditions:
 
 	If (trial * trial ==  num):
         	Return (trial);
@@ -130,7 +133,7 @@ Function(helper) int dummy_sqrt(int num, int trial):
         	Return (-1);
 	End If
 	
-	Continue the search with the next trial value
+	// Continue the search with the next trial value
 	Return (dummy_sqrt(num, trial + 1));
 
 End program
@@ -138,13 +141,13 @@ End program
 Start program
 Function int _sqrt_recursion(int n):
 
-	Set base condition:
+	// Set base condition:
 
 	If (n < 0):
 		Return (-1);
 	End If
 	
-	Make a recursive to dummy_sqrt to search for the square root
+	// Make a recursive to dummy_sqrt to search for the square root
 	Return (dummy_sqrt(n, 1));
 
 End program
@@ -155,7 +158,7 @@ End program
 Start program
 Function(helper) int is_prime(int n, int denominator):
 
-        Set base conditions:
+        // Set base conditions:
 
         If (n <= 1):
         	Return (0);
@@ -169,7 +172,7 @@ Function(helper) int is_prime(int n, int denominator):
         	Return (0);
         End If
 
-        Make a recursive call to move to the next denominator:
+        // Make a recursive call to move to the next denominator:
         Return (is_prime(n, denominator - 1));
 
 End program
@@ -177,7 +180,7 @@ End program
 Start program
 Function int is_prime_number(int n):
 
-        Make a recursive to is_prime  to check the primality of the n:
+        // Make a recursive to is_prime  to check the primality of the n:
         Return (dummy_sqrt(n, 1));
 
 End program
@@ -188,7 +191,7 @@ End program
 Start program
 Function(helper) int palindrome_test(char *str, int forward, int backward):
 
-        Set base conditions:
+        // Set base conditions:
 
         If (forward >= backward):
                 Return (1);
@@ -198,26 +201,44 @@ Function(helper) int palindrome_test(char *str, int forward, int backward):
                 Return (0);
         End If
 
-        Make a recursive call to continue comparing the rest of the string:
+        // Make a recursive call to continue comparing the rest of the string:
         Return (palindrome_test(str, forward + 1, backward - 1));
 
 End program
 
+Function(helper) int str_len(char *str):
+
+        // Set base conditions:
+
+        If (str == '\0'):
+                Return (0);
+        End If
+
+	Else
+	// Increment str:
+		str++
+
+	// Make a recursive call to add 1 to str_len at each increment:
+		Return (1 + str_len(str + 1));
+        End Else
+
+End program
+
 Start program
-Function int is_prime_number(int n):
+Function int is_palindrome(char *s):
 	
-	Declare a variable slen to keep track of the string length:
-	
-	Loop through the string using For Loop to get the string length:
-	For (slen = 0; s[slen] != '\0'; slen++):
-	
-	Setting base conditions
-	
-	If (s <= 1):
+	// Declare a variable slen to keep track of the string length:
+	int slen;
+
+	// Assign the return value of the str_len value to slen:
+	slen = str_len(s);
+
+	// Setting base conditions
+	If (slen <= 1):
 		Return (1);
 	End If
 
-        Make a recursive to_palindrome  to check if the string is a palindrome:
+        // Make a recursive to palindrome_test to check if the string is a palindrome:
         Return (palindrome_test(s, 0, slen - 1));
 
 End program
