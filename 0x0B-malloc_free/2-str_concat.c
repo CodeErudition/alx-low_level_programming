@@ -12,14 +12,20 @@
  * And returns NULL if memory allocation fails.
  */
 
+#include <stdlib.h>
+
 char *str_concat(char *s1, char *s2)
 {
 	int s1_len = 0, s2_len = 0, i, j;
 	char *new_str;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 	while (s1[s1_len] != '\0')
 	{
@@ -29,23 +35,19 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2_len++;
 	}
-	new_str = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+	new_str = (char *)malloc(s1_len + s2_len + 1);
 	if (new_str != NULL)
 	{
-		i = 0;
-		while (s1[i] != '\0')
-		{
+		for (i = 0; i < s1_len; i++)
 			new_str[i] = s1[i];
-			i++;
-		}
-		j = 0;
-		while (s2[j] != '\0')
-		{
-			new_str[i] = s2[j];
-			i++;
-			j++;
-		}
-		new_str[i] = '\0';
+		for (j = 0; j < s2_len; j++)
+			new_str[s1_len + j] = s2[j];
+		new_str[s1_len + s2_len] = '\0';
+	}
+	else
+	{
+		return (NULL);
 	}
 	return (new_str);
 }
+
