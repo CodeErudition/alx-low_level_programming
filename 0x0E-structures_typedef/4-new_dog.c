@@ -26,7 +26,7 @@ int _str_len(char *s)
  * *_str_cpy - A function that copies the string pointed to by src
  * including the terminating null byte (\0)
  * to the buffer pointed to by dest
- * 
+ *
  * @dest: Pointer to the buffer in which we copy the string
  * @src: Pointer to ther string to be copied
  *
