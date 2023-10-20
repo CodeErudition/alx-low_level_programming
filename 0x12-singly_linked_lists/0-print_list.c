@@ -4,7 +4,7 @@
 /**
  * print_list - A function that prints all the elements
  * of a list_t list.
- * 
+ *
  * @h: A pointer to the head of the list.
  *
  * Return:int (int this case the number of nodes in the list).
